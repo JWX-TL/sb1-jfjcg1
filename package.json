@@ -1,0 +1,35 @@
+{
+  "name": "tingling-ai",
+  "main": "app/app.ts",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@nativescript/core": "8.5.0",
+    "@nativescript/camera": "5.0.12",
+    "@nativescript/mlkit": "2.3.0",
+    "@nativescript/firebase": "13.0.1",
+    "@nativescript/firebase-core": "3.0.0",
+    "@nativescript/firebase-analytics": "3.0.0",
+    "@nativescript/firebase-storage": "3.0.0",
+    "@nativescript/theme": "3.0.2",
+    "@tensorflow/tfjs": "4.15.0",
+    "@tensorflow-models/face-landmarks-detection": "1.0.5",
+    "@tensorflow-models/face-detection": "1.0.2",
+    "openai": "4.24.1",
+    "axios": "1.6.2"
+  },
+  "devDependencies": {
+    "@nativescript/android": "8.5.0",
+    "@nativescript/ios": "8.5.0",
+    "@nativescript/types": "8.5.0",
+    "@nativescript/webpack": "5.0.18",
+    "@nativescript/tailwind": "2.0.1",
+    "typescript": "5.0.4",
+    "tailwindcss": "3.3.2"
+  },
+  "scripts": {
+    "android": "ns run android",
+    "ios": "ns run ios",
+    "preview": "ns preview"
+  }
+}

@@ -1,0 +1,44 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Analysis Results">
+        <NavigationButton visibility="visible" />
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Image src="{{ analysisImage }}" stretch="aspectFit" height="200" class="mb-4" />
+            
+            <Label text="Your Skin Analysis" class="text-2xl font-bold mb-4" />
+            
+            <GridLayout rows="auto, auto, auto" columns="*, *" class="mb-4">
+                <Label text="Skin Type:" class="font-bold" row="0" col="0" />
+                <Label text="{{ results.skinType }}" row="0" col="1" />
+                
+                <Label text="Hydration:" class="font-bold" row="1" col="0" />
+                <Label text="{{ results.hydrationLevel }}%" row="1" col="1" />
+                
+                <Label text="Sensitivity:" class="font-bold" row="2" col="0" />
+                <Label text="{{ results.sensitivityLevel }}" row="2" col="1" />
+            </GridLayout>
+            
+            <Label text="Detected Concerns" class="text-xl font-bold mb-2" />
+            <ListView items="{{ results.concerns }}" class="mb-4">
+                <ListView.itemTemplate>
+                    <Label text="{{ $value }}" class="p-2" />
+                </ListView.itemTemplate>
+            </ListView>
+            
+            <Label text="AI Recommendations" class="text-xl font-bold mb-2" />
+            <ListView items="{{ recommendations }}" class="mb-4">
+                <ListView.itemTemplate>
+                    <StackLayout class="p-2">
+                        <Label text="{{ name }}" class="font-bold" />
+                        <Label text="{{ description }}" textWrap="true" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+            
+            <Button text="View Recommended Products" tap="{{ viewProducts }}" class="btn btn-primary mb-2" />
+            <Button text="Save Analysis" tap="{{ saveAnalysis }}" class="btn btn-secondary" />
+        </StackLayout>
+    </ScrollView>
+</Page>

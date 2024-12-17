@@ -1,0 +1,41 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Makeup Tutorial">
+        <NavigationButton visibility="visible" />
+    </ActionBar>
+
+    <GridLayout rows="*, auto">
+        <ScrollView row="0">
+            <StackLayout class="p-4">
+                <Label text="{{ currentTutorial.title }}" class="text-2xl font-bold mb-4" />
+                
+                <WebView src="{{ currentTutorial.videoUrl }}" height="300" class="mb-4" />
+                
+                <Label text="Steps:" class="text-xl font-bold mb-2" />
+                <ListView items="{{ currentTutorial.steps }}" class="mb-4">
+                    <ListView.itemTemplate>
+                        <StackLayout class="p-2">
+                            <Label text="{{ step }}" textWrap="true" />
+                        </StackLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+                
+                <Label text="Products Used:" class="text-xl font-bold mb-2" />
+                <ListView items="{{ currentTutorial.products }}" class="mb-4">
+                    <ListView.itemTemplate>
+                        <GridLayout columns="auto, *" class="p-2">
+                            <Image src="{{ imageUrl }}" width="50" height="50" col="0" />
+                            <StackLayout col="1" class="ml-2">
+                                <Label text="{{ name }}" class="font-bold" />
+                                <Label text="{{ description }}" textWrap="true" />
+                            </StackLayout>
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+        
+        <StackLayout row="1" class="p-4 bg-white">
+            <Button text="Ask AI Assistant" tap="{{ askAIAssistant }}" class="btn btn-primary" />
+        </StackLayout>
+    </GridLayout>
+</Page>

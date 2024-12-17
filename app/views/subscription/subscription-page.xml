@@ -1,0 +1,28 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Beauty Box Subscription">
+        <NavigationButton visibility="visible" />
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Choose Your Beauty Box" class="text-2xl font-bold mb-4" />
+            
+            <ListView items="{{ subscriptionPlans }}" class="mb-4">
+                <ListView.itemTemplate>
+                    <StackLayout class="p-4 m-2 bg-white rounded-lg shadow">
+                        <Label text="{{ name }}" class="text-xl font-bold" />
+                        <Label text="{{ '$' + price }}" class="text-lg text-green-600" />
+                        <Label text="{{ description }}" textWrap="true" class="text-gray-600 mb-2" />
+                        <ListView items="{{ features }}" height="100">
+                            <ListView.itemTemplate>
+                                <Label text="• {{ $value }}" class="text-gray-700" textWrap="true" />
+                            </ListView.itemTemplate>
+                        </ListView>
+                        <Button text="Subscribe" tap="{{ $parent.subscribeToPlan }}" 
+                                data="{{ id }}" class="btn btn-primary mt-2" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</Page>

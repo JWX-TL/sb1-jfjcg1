@@ -1,0 +1,7 @@
+<Frame defaultPage="views/onboarding/onboarding-page">
+  <Frame.actionBar>
+    <ActionBar title="Tingling AI">
+      <NavigationButton visibility="collapsed" />
+    </ActionBar>
+  </Frame.actionBar>
+</Frame>
